@@ -1,7 +1,17 @@
 // Answer the following questions:
 
-// Add the plots to your report and explain them (describe what you see)
-// What is the effect of the PID according to the plots, how each part of the PID affects the control command?
-// How would you design a way to automatically tune the PID parameters?
-// PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
+// Add the plots to your report and explain them (describe what you see) 
+// ans. For the final parameters steering error is almost between -0.15 and 0.25 and is fluctuating. therottle error output converges to around 1.5 which should be lowre.
+
+
+// What is the effect of the PID according to the plots, how each part of the PID affects the control command? the steering angle is propotional with Kp and it could lead to overshoot of the car if we use it alone, furthermore, increasing Kp lead to faster oscilation of the car. SO as to help the performance we add differential part using Coefficient Kd to follow the trajectory. But sometime there are systematic biases and Kd alone adjust itself to the bias the adding integral part with coefficient Ki mitigate effect of the systematic bias
+
+
+// How would you design a way to automatically tune the PID parameters? Twiddle algorithm automate parameter optimization.
+
+
+// PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller? implementation of the PID is easy and it is not a computationaly expensive algorithm, on the other hand dynamic model of the car consider as an important part of it and ignoring the model limit our control on the real car also it could bring up saftey issues
+
+
 // (Optional) What would you do to improve the PID controller?
+//ans. using any optimization algorithms such as twiddle can help a lot in tuning parameters and getting better answers to improve PID controller.
